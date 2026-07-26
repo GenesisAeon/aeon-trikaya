@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.1.1] - 2026-07-26
+
+- Fixed: `import aeon_trikaya` crashed with `ModuleNotFoundError: No module
+  named 'plotly'` unless the optional `[plotting]` extra was also
+  installed, because `__init__.py` unconditionally imported
+  `plot_crep_mandala` (which needs plotly) at module load time - found
+  while building `aeon-sealcore` (P54), which depends on this package
+  without needing plotting. `plot_crep_mandala` is now imported inside a
+  try/except and only added to `__all__` when plotly is actually
+  installed; `from aeon_trikaya import plot_crep_mandala` now fails with
+  a normal `ImportError` (not a crash on unrelated imports) if `[plotting]`
+  wasn't installed.
+
 ## [0.1.0] - 2026-07-26
 
 - Extracted from `unified-mandala/GenesisAeonAdvancedAi/`: 17 real, working

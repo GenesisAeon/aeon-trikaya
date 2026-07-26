@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "aeon-trikaya"
-version = "0.1.0"
+version = "0.1.1"
 description = "Fractal CREP feedback and Trikaya state classification for numeric-to-symbolic sensemaking (GenesisAeon P52)"
 readme = "README.md"
 license = { text = "MIT" }

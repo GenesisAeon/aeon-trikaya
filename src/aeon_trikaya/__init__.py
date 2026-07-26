@@ -10,7 +10,7 @@ precursor: numeric -> symbol (tone/color/glyph) -> discrete CREP score
 -> Trikaya state -> optional fractal refeedback -> persistent memory.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 from .adaptive_threshold import auto_adapt_crep_threshold
 from .advanced_agent import AdvancedAeonAgent
@@ -19,7 +19,6 @@ from .aeon_logger import log_event
 from .aeon_processor import symbolic_manifestation
 from .archetype_tools import get_symbol
 from .crep_eval import evaluate_crep
-from .mandala_visualizer import plot_crep_mandala
 from .memory_store import (
     load_results,
     store_result,
@@ -36,6 +35,17 @@ from .plugin_loader import load_plugin_manifest, load_plugins
 from .symbol_tools import assign_color, transform_to_symbol
 from .system import AeonTrikayaSystem
 
+# plot_crep_mandala needs plotly, only installed via the optional
+# `plotting` extra - importing it unconditionally here would make that
+# extra not actually optional (see aeon-sealcore's epistemic_status.md,
+# which caught this while depending on this package without [plotting]).
+try:
+    from .mandala_visualizer import plot_crep_mandala  # noqa: F401 (re-exported below)
+
+    _HAS_PLOTTING = True
+except ImportError:
+    _HAS_PLOTTING = False
+
 __all__ = [
     "AeonAgent",
     "AdvancedAeonAgent",
@@ -45,7 +55,6 @@ __all__ = [
     "evaluate_crep",
     "log_event",
     "symbolic_manifestation",
-    "plot_crep_mandala",
     "auto_adapt_crep_threshold",
     "load_plugin_manifest",
     "load_plugins",
@@ -61,4 +70,7 @@ __all__ = [
     "volatility_metric",
     "volatility_metric_memory",
 ]
+
+if _HAS_PLOTTING:
+    __all__.append("plot_crep_mandala")
 
