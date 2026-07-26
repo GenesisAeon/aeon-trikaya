@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use aeon-trikaya, please cite it as below."
+type: software
+title: "aeon-trikaya: Fractal CREP Feedback and Trikaya State Classification (GenesisAeon P52)"
+version: "0.1.0"
+date-released: "2026-07-26"
+authors:
+  - family-names: Römer
+    given-names: Johann
+    affiliation: "MOR Research Collective"
+repository-code: "https://github.com/GenesisAeon/aeon-trikaya"
+license: MIT
+keywords:
+  - trikaya
+  - CREP
+  - UTAC
+  - GenesisAeon
+  - fractal-feedback
+  - symbolic-ai
