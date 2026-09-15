@@ -1,0 +1,36 @@
+{
+  "title": "aeon-trikaya: Fractal CREP Feedback and Trikaya State Classification (GenesisAeon Package 52)",
+  "description": "<p>Fractal CREP feedback and Trikaya state classification for numeric-to-symbolic sensemaking. GenesisAeon Package 52.</p><p>A rule-based (not machine-learning) pipeline: numeric input is translated into symbolic form (tone frequencies, HSL colors, a glyph), scored with a discrete CREP heuristic, classified into one of three Trikaya states (PRÄSENZ / LEERE / AUFLÖSUNG), optionally refined through a fractal refeedback loop, and persisted with trend/volatility analytics over time.</p><p>See <a href=\"https://github.com/GenesisAeon/aeon-trikaya\">github.com/GenesisAeon/aeon-trikaya</a> for source, documentation, and the honest epistemic-status breakdown of what's real vs. aspirational.</p>",
+  "creators": [
+    {
+      "name": "Römer, Johann",
+      "affiliation": "MOR Research Collective"
+    }
+  ],
+  "license": "MIT",
+  "upload_type": "software",
+  "access_right": "open",
+  "keywords": [
+    "trikaya",
+    "CREP",
+    "UTAC",
+    "GenesisAeon",
+    "fractal-feedback",
+    "symbolic-ai",
+    "open-science"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.19645351",
+      "relation": "isPartOf",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    }
+  ],
+  "version": "0.1.1",
+  "communities": [
+    {
+      "identifier": "genesisaeon"
+    }
+  ]
+}
