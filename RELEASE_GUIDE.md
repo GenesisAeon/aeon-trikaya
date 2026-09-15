@@ -18,7 +18,7 @@ This package is not on PyPI yet (Pre-Alpha). Before tagging a release:
 
 1. Register the `aeon-trikaya` project name on PyPI (either by a first
    manual `twine upload` or by creating the project via the PyPI web UI).
-2. Add a `PYPITOKEN` repository secret at
+2. Add a `PYPI_API_TOKEN` repository secret at
    `Settings -> Secrets and variables -> Actions` with a PyPI API token
    scoped to this project.
 3. Optionally enable Zenodo-GitHub integration at
