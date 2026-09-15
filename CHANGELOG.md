@@ -2,6 +2,18 @@
 
 ## [0.1.1] - 2026-07-26
 
+- Fixed (2026-09-15, found by the new CI while setting up this package's
+  GitHub repo and release infrastructure): `requires-python = ">=3.10"`
+  was wrong -- `diamond-setup>=2.2.0` requires Python >=3.11, so
+  installing on 3.10 failed with "No matching distribution found".
+  Bumped to `>=3.11` (pyproject.toml, classifiers, ruff/mypy target,
+  CI matrix) -- the same chronic Python-3.10-vs-diamond-setup mismatch
+  already found and fixed in `neural-avalanche-utac`. Also fixed CI/
+  release workflows installing only `.[dev]`, which doesn't pull in the
+  `flask`/`plotly` extras that `test_aeon_web.py`,
+  `test_feedback_graph.py`, and `test_mandala_visualizer.py` import
+  unconditionally -- passed locally only because both were already
+  installed globally on the dev machine. Now installs `.[dev,plotting,flask]`.
 - Fixed: `import aeon_trikaya` crashed with `ModuleNotFoundError: No module
   named 'plotly'` unless the optional `[plotting]` extra was also
   installed, because `__init__.py` unconditionally imported

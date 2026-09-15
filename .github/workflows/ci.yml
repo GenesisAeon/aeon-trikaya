@@ -20,7 +20,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install dev dependencies
-        run: pip install -e ".[dev]"
+        run: pip install -e ".[dev,plotting,flask]"
       - name: Run ruff
         run: ruff check src tests
       - name: Run mypy
@@ -32,13 +32,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.10", "3.11", "3.12"]
+        python-version: ["3.11", "3.12"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
-        run: pip install -e ".[dev]"
+        run: pip install -e ".[dev,plotting,flask]"
       - name: Run pytest with coverage
         run: pytest
