@@ -8,3 +8,7 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 dist/
+aeon_proto_log.yaml
+aeon_proto_state.yaml
+aeon_proto_symbols.yaml
+test_log.yaml
